@@ -1,0 +1,80 @@
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Estructura para aplicación</Title>
+      <Shortcut>appb</Shortcut>
+      <Description>Creando estructura una aplicación completa</Description>
+      <Author>Elena Guzmán Blanco (Geekstorming!)</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="false">
+          <ID>SystemConsole</ID>
+          <Function>SimpleTypeName(global::System.Console)</Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[ 
+            /*
+			 * @autor
+			 * @fecha
+			 * @app
+			 * @licencia
+			 *
+			 * @contenido
+			 *
+			*/
+
+			using System;
+			// Otras invocaciones de using
+			// using propios
+
+			namespace egb.MODIFICAME
+			{
+				class MODIFICAME
+				{
+					// Campos
+
+					// Propiedades
+
+					// Métodos
+					static void IUMenu()
+					{
+						//
+					}
+
+					// Métodos privados
+
+	
+					// Inicializador
+					static void Main(string[] args)
+					{
+						Console.Title = "MODIFICAME";
+						// Ancho de consola
+						Console.BufferWidth = Console.WindowWidth;
+						// Alto de consola
+						Console.BufferHeight = Console.WindowHeight;
+						
+
+						try
+						{
+							IUMenu();
+						}
+						catch
+						{
+							Console.WriteLine("Se ha producido un error, el programa debe cerrarse.");
+							Console.ReadLine();
+						}
+
+					}
+        
+				}
+			}
+        ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
