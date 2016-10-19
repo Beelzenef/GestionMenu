@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace saludete
+namespace ANDyOR
 {
-    class Program
+    class ANDyOR
     {
         static void Main(string[] args)
         {
