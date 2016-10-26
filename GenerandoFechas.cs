@@ -1,16 +1,15 @@
 ﻿using System;
-using System.Threading;
 
-namespace ConversionBinario
+namespace GenerandoFechas
 {
-	class Inicio
+	class GenerandoFechas
 	{
 		static void Main(string[] args)
 		{
 			// Variables
 
 			// Titulo de consola
-			Console.Title = "Conversion a binario";
+			Console.Title = "Generando fechas varias";
 
 			Console.WriteLine (generarFecha (1999, 2011).ToLongDateString ());
 			Console.WriteLine (generarFecha().ToLongDateString());
@@ -18,33 +17,6 @@ namespace ConversionBinario
 			Console.WriteLine ("\n\nPulsa ENTER para salir...");
 			Console.ReadLine ();
 
-		}
-		
-		static string ConversorABinario()
-		{
-			// Variables
-			string convertido = string.Empty;
-			int mascara = 1;
-			int resultadoAND = 0;
-			int numero = 0;
-
-			Console.WriteLine ("Dame un numero para convertir a binario:");
-			numero = ObtenerNum (0, 20);
-
-			Console.WriteLine ("Calculando...");
-
-			for (int i = 0; i < 8; i++) {
-				mascara = mascara * mascara;
-				resultadoAND = numero & mascara;
-
-				if (resultadoAND == 0)
-					convertido = "1" + convertido;
-				else
-					convertido= "0" + convertido;
-			}
-
-			Console.WriteLine ("Tu número {0} es, en binario, {1}", numero, convertido);
-			return convertido;
 		}
 
 		static int ObtenerNum(int min, int max)
