@@ -11,7 +11,7 @@ namespace TeclasMuertas
 			ConsoleKeyInfo tecla;
 
 			// Titulo de consola
-			Console.Title = "Menu de altas";
+			Console.Title = "Control de teclas de control";
 		
 			Console.WriteLine ("Pulsa una tecla");
 			tecla = Console.ReadKey ();
