@@ -11,7 +11,7 @@ namespace OperandoArrays
             string[] listillaPalabras = {"C#", "Python", "SASS", "Javascript" };
 
             // Titulo de consola
-            Console.Title = Operando arrays";
+            Console.Title = "Operando arrays";
 
             Console.WriteLine("Utilizando listas, arrays");
             listilla = LlenarDatos();
