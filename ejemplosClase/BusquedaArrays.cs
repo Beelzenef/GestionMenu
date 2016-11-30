@@ -4,6 +4,8 @@ namespace BusquedaArrays
 {
 	class BusquedaArrays
 	{
+		static int nDatos = 0;
+		
 		static void Main(string[] args)
 		{
 			// Variables
@@ -43,6 +45,26 @@ namespace BusquedaArrays
 			catch {
 				Console.WriteLine ("Error rellenando array");
 			}
+			
+			// Otras operaciones
+			const int POSICIONES = 100;
+			int[] numeritos = new int[POSICIONES];
+
+			Console.WriteLine ("Listando array:");
+			Listar (numeritos);
+			Console.WriteLine ("Introduciendo tres valores nuevos...");
+			Anadir (numeritos, 12);
+			Anadir (numeritos, 56);
+			Anadir (numeritos, 254);
+			Console.WriteLine ("Listando array:");
+			Listar (numeritos);
+			Console.WriteLine ("Añadiendo 10 datos aleatorios nuevos");
+			Console.WriteLine ("El array ha acumulado {0} valores nuevos ", Anadir (numeritos, 10, 100));
+			Console.WriteLine ("Listando array:");
+			Listar(numeritos);
+			Borrar (numeritos, 1);
+			Console.WriteLine ("Listando array:");
+			Listar(numeritos);
 
 			// Salida
 			Console.WriteLine ("\n\nPulsa ENTER para salir...");
@@ -66,14 +88,7 @@ namespace BusquedaArrays
 				Console.Write ("{0} ", unArray [i]);
 			}
 		}
-
-		/// <summary>
-		/// Realiza busqueda secuencial del dato en el array "vector"
-		/// </summary>
-		/// <returns>Indice del dato a buscar, -1 si no lo encuentra</returns>
-		/// <param name="datoABuscar">Dato a buscar.</param>
-		/// <param name="vector">Nombre del array </param>
-		/// <param name="nDatos">Numero de datos entre los que buscar</param>
+		
 		static int BusquedaSec(int datoABuscar, int[] vector, int nDatos)
 		{
 			for (int i = 0; i < nDatos; i++)
@@ -109,6 +124,53 @@ namespace BusquedaArrays
 				return posMedio;
 			return -1;
 		}
+
+		static bool Anadir(int[] vector, int dato)
+		{
+			if (vector.Length == nDatos)
+				return false;
+			vector [nDatos++] = dato;
+			return true;
+		}
+
+		static int Anadir(int[] vector, int nDatosAleatorios, int maximo)
+		{
+			if (nDatos == vector.Length)
+				return 0;
+
+			Random dado = new Random ();
+			int contadorDatosAnadidos = 0;
+
+			for (int i = 0; i < nDatosAleatorios; i++)
+				if (Anadir (vector, dado.Next (maximo)))
+					contadorDatosAnadidos++;
+			return contadorDatosAnadidos;
+		}
+		
+		static bool Insertar(int[] vector, int dato, int posicion)
+		{
+			if (nDatos == vector.Length || posicion < 0 || posicion > nDatos)
+				return false;
+			
+			for (int i = nDatos; i > posicion; i--)
+				vector [i] = vector [i - 1];
+			vector[posicion] = dato;
+			nDatos++;
+			return true;
+		}
+
+		static void Listar(int[] vector)
+		{
+			if (nDatos == 0) {
+				Console.WriteLine ("Array vacío, pulsa ENTER para continuar...");
+				Console.ReadLine ();
+			} else {
+				for (int i = 0; i < nDatos; i++)
+					Console.Write ("{0} ", vector [i].ToString ());
+				Console.WriteLine ("\nSin más datos a listar...");
+			}
+		}
+
 
 	}
 }
