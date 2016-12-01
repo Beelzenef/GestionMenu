@@ -170,8 +170,34 @@ namespace BusquedaArrays
 				Console.WriteLine ("\nSin más datos a listar...");
 			}
 		}
+		
+		static void OrdenacionBurbuja(int[] vector)
+		{
+			int aux = 0;
+			int tamanio = nDatos;
 
+			for (int i = 1; i < tamanio; i++)
+				for (int j = tamanio - 1; j >= i; j--)
+					if (vector [j] < vector [j - 1]) {
+						aux = vector [j];
+						vector [j] = vector [j - 1];
+						vector [j - 1] = aux;
+					}
+		}
 
+		static void InvertirArray(int[] vector)
+		{
+			int aux = 0;
+			int tamanio = nDatos;
+
+			for (int i = 1; i < tamanio; i++)
+				for (int j = tamanio - 1; j >= i; j--)
+					if (vector [j] > vector [j - 1]) {
+						aux = vector [j];
+						vector [j] = vector [j - 1];
+						vector [j - 1] = aux;
+					}
+		}
 	}
 }
 
