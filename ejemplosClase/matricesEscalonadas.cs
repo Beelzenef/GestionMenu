@@ -42,6 +42,13 @@ namespace MatricesEscalonadas
 
 			return m;
 		}
+		
+		
+		static void MostrarVector(int[] v)
+		{
+			for (int i = 0; i < v.Length; i++)
+				Console.Write ("{0} ", v[i]);
+		}
 
 		public static void Main (string[] args)
 		{
@@ -67,6 +74,18 @@ namespace MatricesEscalonadas
 			MostrarMEscalonada (mat2);
 			InicializarAleatoria (mat2);
 			MostrarMEscalonada (mat2);
+			
+			
+			int[] m1 = { 1, 1, 1 };
+			int[] m2 = null;
+
+			m2 = (int[])m1.Clone ();
+
+			Console.WriteLine ("Matriz 1:");
+			MostrarVector (m1);
+			Console.WriteLine ("\nMatriz 2:");
+			MostrarVector (m2);
+
 
 			Console.ReadLine ();
 		}
