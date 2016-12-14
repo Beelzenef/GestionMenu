@@ -26,7 +26,7 @@ namespace LeerSoloNums
 
 		static int LeerSoloNumeros()
 		{
-			char[] numeros = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
+			char[] numeros = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'  };
 			string numeroAConvertir = string.Empty;
 			ConsoleKeyInfo tecla;
 
