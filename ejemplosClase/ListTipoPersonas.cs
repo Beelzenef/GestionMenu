@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace ListaTipoPersonas
@@ -13,6 +14,7 @@ namespace ListaTipoPersonas
 		string codigo;
 		string nombre;
 		int nivel;
+		bool borrado;
 		Clases clase;
 
 		// Constructores
@@ -35,6 +37,8 @@ namespace ListaTipoPersonas
 			this.nivel = niv;
 
 			this.clase = c;
+
+			this.borrado = false;
 		}
 
 		// Metodos de asignacion y recuperación de datos
@@ -83,6 +87,16 @@ namespace ListaTipoPersonas
 
 		public string getPersona() {
 			return this.nombre + ", " + this.clase.ToString() + ", " + this.nivel.ToString();
+		}
+
+		public bool getBorrado()
+		{
+			return this.borrado;
+		}
+
+		public void setBorrado(bool b)
+		{
+			this.borrado = b;
 		}
 
 		public override string ToString ()
@@ -139,7 +153,11 @@ namespace ListaTipoPersonas
 			return (FichaPersonaje)pjtillo;
 		}
 
-		static void ListarEmpleados(List<FichaPersonaje> l)
+		/// <summary>
+		/// Lista todos los personajes existentes
+		/// </summary>
+		/// <param name="l">Lista de personajes que mostrar</param>
+		static void ListarPersonajes(List<FichaPersonaje> l)
 		{
 			Console.WriteLine (string.Format("Lista de personas ({0})", l.Count.ToString()));
 			Console.WriteLine ("".PadRight(70, '='));
@@ -148,10 +166,53 @@ namespace ListaTipoPersonas
 								"Nivel".ToString().PadRight(8) +
 								"Clase".ToString().PadRight(10));
 			Console.WriteLine ("".PadRight(70, '='));
-			foreach (FichaPersonaje item in l)
-				Console.WriteLine (item.ToString());
+			foreach (FichaPersonaje item in l) {
+				if (!item.getBorrado())
+					Console.WriteLine (item.ToString ());
+			}
 		}
 
+		static bool BorrarFicha(int posFicha, List<FichaPersonaje> l)
+		{
+			if (posFicha < 0 || posFicha > l.Count)
+				return false;
+			MostrarPersonaje (posFicha, l);
+			Console.WriteLine ("¿Esta es la ficha que quieres borrar?");
+
+			Console.WriteLine ("\n Pulsa 'S' para borrar, cualquier otra para CANCELAR...");
+			if (Console.ReadKey (true).Key == ConsoleKey.S) {
+				l [posFicha].setBorrado (true);
+				Console.WriteLine ("Ficha borrada");
+				return true;
+			} else {
+				Console.WriteLine ("Operacion cancelada...");
+				return false;
+			}
+		}
+
+		/// <summary>
+		/// Muestra una ficha de personaje en una posicion determinada
+		/// </summary>
+		/// <param name="posFicha">Posicion de la ficha</param>
+		/// <param name="l">Lista de personajes en la que buscar</param>
+		static void MostrarPersonaje(int posFicha, List<FichaPersonaje> l)
+		{
+			FichaPersonaje temp;
+			if (posFicha < 0 || posFicha > l.Count)
+				return;
+			temp = l [posFicha];
+			Console.WriteLine ("".PadRight(45, '-'));
+			Console.WriteLine ("DATOS PERSONALES");
+			Console.WriteLine ("".PadRight(45, '-'));
+			Console.WriteLine (temp.ToString());
+		}
+
+		/// <summary>
+		/// Realiza búsqueda por el codigo de ficha
+		/// </summary>
+		/// <returns>La posicion de la ficha encontrada, o -1 si no existe</returns>
+		/// <param name="aBuscar">Ficha a buscar</param>
+		/// <param name="l">Lista de personajes en la que buscar</param>
 		static int BuscarFicha(FichaPersonaje aBuscar, List<FichaPersonaje> l)
 		{
 			if (aBuscar.getCodigo().Length == 0)
@@ -162,6 +223,11 @@ namespace ListaTipoPersonas
 			return -1;
 		}
 
+		/// <summary>
+		/// Añade una ficha si no existe su código
+		/// </summary>
+		/// <param name="f">Ficha de personaje a añadir</param>
+		/// <param name="l">Lista de personajes en la que buscar</param>
 		static void AnadirFicha(FichaPersonaje f, List<FichaPersonaje> l)
 		{
 			if (BuscarFicha (f, l) == -1)
@@ -188,7 +254,7 @@ namespace ListaTipoPersonas
 
 		static void FichasAleatorias(int nFichas, List<FichaPersonaje> l)
 		{
-			string[] nombres = {"Hannibal", "Eragon", "Machina", "Jane", "Katie", "Paolini", "Robert Langdon" };
+			string[] nombres = {"Hannibal", "Eragon", "Machina", "Jane", "Katie", "Paolini", "Robert" };
 			int rangoLetras = 91;
 			// Variables temporales para rellenar
 			string codigoTMP = string.Empty;
@@ -220,13 +286,15 @@ namespace ListaTipoPersonas
 
 			AnadirFicha (pj, personajes);
 			AnadirFicha (pj, personajes);
-
 			FichasAleatorias (100, personajes);
 
+			MostrarPersonaje (2, personajes);
+
 			//personajes.Add(LeerFicha ());
 			//personajes.Add(LeerFicha ());
 			//personajes.Add(LeerFicha ());
-			ListarEmpleados (personajes);
+			BorrarFicha(2, personajes);
+			ListarPersonajes (personajes);
 
 			Console.ReadLine ();
 		}
