@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Collections;
 
 namespace egb.ordenandoCartas
 {
-	public class Carta : IComparable<Carta>
+	public class Carta : IComparable<Carta>, IEquatable<Carta>
 	{
 		// Campos
 		public int valor;
@@ -55,6 +55,16 @@ namespace egb.ordenandoCartas
 				return comparador;
 			comparador = this.valor.CompareTo (o.valor);
 			return comparador;
+		}
+
+		public bool EsIgual(Carta c)
+		{
+			return (this.palo == c.palo) && (this.valor == c.valor);
+		}
+
+		public bool Equals(Carta c)
+		{
+			return (this.palo == c.palo) && (this.valor == c.valor);
 		}
 
 		// Constructores
