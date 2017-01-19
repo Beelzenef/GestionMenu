@@ -1,10 +1,16 @@
 using System;
-using System.Collections.Generic;
 
 namespace egb.Circunferencia
 {
 	abstract class Figura
 	{
+		string tipolienzo;
+
+		public string Lienzo 
+		{
+			get { return this.tipolienzo; }
+		}
+
 		public abstract double Area {
 			get;
 		}
@@ -16,6 +22,13 @@ namespace egb.Circunferencia
 		public virtual ConsoleColor Color()
 		{
 			return ConsoleColor.Red;
+		}
+
+		public Figura() { }
+
+		public Figura(string tL)
+		{
+			this.tipolienzo = tL;
 		}
 	}
 
@@ -82,6 +95,7 @@ namespace egb.Circunferencia
 		double lado;
 		double longitud;
 		double area;
+		string tipoLienzo;
 
 		public double Lado {
 			get {
@@ -111,7 +125,16 @@ namespace egb.Circunferencia
 			}
 		}
 
+		public Cuadrado() { }
+
 		public Cuadrado(double l)
+		{
+			lado = l;
+			area = lado * lado;
+			longitud = lado * 4;
+		}
+
+		public Cuadrado(double l, string tL) : base(tL)
 		{
 			lado = l;
 			area = lado * lado;
