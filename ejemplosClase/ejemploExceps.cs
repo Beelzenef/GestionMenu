@@ -4,6 +4,21 @@ namespace egb.progExcepciones
 {
 	class ExcPropiaException : Exception {	}
 
+	class ContadorCeroException : Exception
+	{
+		public ContadorCeroException()
+			: base()
+		{
+
+		}
+
+		public ContadorCeroException(string msg)
+			: base(msg)
+		{
+			
+		}
+	}
+
 	class Clase1
 	{
 		public static void M1()
@@ -70,6 +85,12 @@ namespace egb.progExcepciones
 			}
 			finally {
 				Console.WriteLine ("FINALLY en Main");
+			}
+
+			try {
+				throw new ContadorCeroException("CERO NOPE");
+			} catch (ContadorCeroException ex) {
+				Console.WriteLine (ex.Message);
 			}
 
 			Console.ReadLine ();
