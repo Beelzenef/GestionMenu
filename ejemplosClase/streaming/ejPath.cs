@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace egb.UsoExcepciones
+namespace egb.usoPath
 {
     class Inicio
     {
