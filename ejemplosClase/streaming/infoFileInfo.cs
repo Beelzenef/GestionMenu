@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace egb.usoDriveInfo
+namespace egb.usoFileInfo
 {
     class Inicio
     {
