@@ -56,11 +56,30 @@ namespace egb.FilesYDirectories
             Console.WriteLine("\nFin de listado...");
         }
 
+        static void CrearDirectorio(string ruta)
+        {
+            DirectoryInfo directorioNuevo = new DirectoryInfo(ruta);
+
+            directorioNuevo.Create();
+            Console.WriteLine("Directorio creado...");
+
+            try
+            {
+                directorioNuevo.Delete();
+                Console.WriteLine("Directorio borrado...");
+            }
+            catch
+            {
+                Console.WriteLine("El directorio no está vacío...");
+            }
+        }
+
         static void Main()
         {
             Console.Title = "Listando items";
 
             string ruta = @"C:\pruebas";
+            string ruta2 = @"C:\pruebas\dir1\didasdsdr2";
 
             Console.WriteLine("Listando ficheros...");
             ListarFicheros(ruta);
@@ -70,6 +89,8 @@ namespace egb.FilesYDirectories
 
             Console.WriteLine("\nListando subdirectorios...");
             ObtenerSubdirectorios(ruta);
+
+            CrearDirectorio(ruta2);
 
             // Salida
             Console.WriteLine("\n\nPulsa ENTER para salir...");
