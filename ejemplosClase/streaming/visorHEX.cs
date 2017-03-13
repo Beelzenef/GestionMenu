@@ -58,7 +58,7 @@ namespace egb.VisorHex
 
         static void Main(string[] args)
         {
-            Console.Title = "Mostrando bytes";
+            Console.Title = "Visor HEX";
 
             string ruta = string.Empty;
 
