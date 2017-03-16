@@ -125,6 +125,75 @@ namespace egb.SerializandoClases
                 }
             }
         }
+        
+        public string CrearHTML()
+        {
+            int nLinea = 1;
+            string ficheroHTML = Path.ChangeExtension(fichero, ".html");
+
+            if (!File.Exists(fichero))
+                return string.Empty;
+           
+            FichaPersona fichaTMP;
+            StringBuilder docHTML = new StringBuilder();
+
+            // Cabecera
+            docHTML.Append("<html>");
+            docHTML.Append("<head>");
+            docHTML.Append("<title> Lista de personas </title>");
+            docHTML.Append("<head>");
+            docHTML.Append("<body>");
+            // Inicio de la tabla
+            docHTML.Append("<h1> Listado de personas </h1>");
+            docHTML.Append("<table border='2'>");
+            docHTML.Append("<tr bgcolor='blue'> <th> Orden </th> <th> Apellidos </th> <th> Nombre </th> <th> Sueldo </th> </tr>");
+
+            using (FileStream flujo = new FileStream(fichero, FileMode.Open, FileAccess.Read))
+            {
+                IFormatter formato = new BinaryFormatter();
+
+                while (true)
+                {
+                    try
+                    {
+                        fichaTMP = (FichaPersona)formato.Deserialize(flujo);
+                        if (fichaTMP.Borrado)
+                            continue;
+                        if (nLinea % 2 == 0)
+                        {
+                            docHTML.Append("<tr bgcolor='yellow'>");
+                        }
+                        else
+                        {
+                            docHTML.Append("<tr bgcolor='beige'>");
+                        }
+                        docHTML.Append("<td>" + nLinea++.ToString("000") + "</td>");
+                        docHTML.Append("<td>" + fichaTMP.Nombre + "</td>");
+                        docHTML.Append("<td>" + fichaTMP.Apellidos + "</td>");
+                        docHTML.Append("<td>" + fichaTMP.Sueldo.ToString() + "</td>");
+                        docHTML.Append("</tr>");
+                    }
+                    catch
+                    {
+                        break;
+                    }
+                }
+            }
+
+            // Fin de HTML
+            docHTML.Append("</table>");
+            docHTML.Append("</body>");
+            docHTML.Append("</html>");
+
+            // Escribiendo en fichero, creando fichero HTML
+            FileStream flujoHTML = new FileStream(ficheroHTML, FileMode.Create, FileAccess.Write);
+            StreamWriter escritor = new StreamWriter(flujoHTML, Encoding.Default);
+            escritor.WriteLine(docHTML.ToString());
+            escritor.Close();
+
+            return ficheroHTML;
+
+        }
 
         public GestionarPersona(string fi)
         {
