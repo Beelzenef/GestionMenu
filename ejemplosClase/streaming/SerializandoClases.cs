@@ -55,6 +55,11 @@ namespace egb.SerializandoClases
             this.nombre = n;
             this.borrado = b;
         }
+
+        public override string ToString()
+        {
+            return string.Format("{0,5} {1,5}, {2, 5}", Nombre, Apellidos, Sueldo.ToString());
+        }
     }
 
     class GestionarPersona
@@ -78,9 +83,74 @@ namespace egb.SerializandoClases
             return true;
         }
 
+        public void AnadirPersonasPrueba(int nPersonas)
+        {
+            FichaPersona fichaTMP;
+            for (int i = 0; i < nPersonas; i++)
+            {
+                fichaTMP = new FichaPersona(i.ToString(), i.ToString(), i);
+                AnadirPersona(fichaTMP);
+            }
+        }
+        
+        public void ListarPersonas()
+        {
+            FichaPersona fichaTMP;
+
+            if (!File.Exists(fichero))
+            {
+                Console.WriteLine("Este no es el ficheor que buscas...");
+                Console.ReadLine();
+                return;
+            }
+
+            using (FileStream flujo = new FileStream(fichero, FileMode.Open, FileAccess.Read))
+            {
+                IFormatter formato = new BinaryFormatter();
+
+                while (true)
+                {
+                    try
+                    {
+                        fichaTMP = (FichaPersona)formato.Deserialize(flujo);
+                        if (fichaTMP.Borrado)
+                            continue;
+                        else
+                            Console.WriteLine(fichaTMP.ToString());
+                    }
+                    catch
+                    {
+                        break;
+                    }
+                }
+            }
+        }
+
         public GestionarPersona(string fi)
         {
             fichero = fi;
+        }
+    }
+
+    class Inicio
+    {
+        static void Main(string[] args)
+        {
+            // Titulo
+            Console.Title = "Serializando Clases";
+            string ruta = @"C:\pruebas\nuevasPersonas.dat";
+
+            GestionarPersona empleados = new GestionarPersona(ruta);
+
+            empleados.AnadirPersonasPrueba(10);
+            empleados.ListarPersonas();
+
+            empleados.AnadirPersona(new FichaPersona("Elena", "G", 100));
+            empleados.ListarPersonas();
+
+            // Salida
+            Console.WriteLine("\n\nPulsa ENTER para salir...");
+            Console.ReadLine();
         }
     }
 }
