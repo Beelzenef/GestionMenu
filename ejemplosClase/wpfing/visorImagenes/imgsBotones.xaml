@@ -1,0 +1,31 @@
+<Window x:Class="ProbandoGrid.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Imagenes en Grid" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button Name="btn_Celda" Content="Botoncete"
+                Grid.Column="1" Grid.Row="2"
+                HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Image Name="img_Visor"
+               Grid.Row="1" Grid.Column="1"
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               StretchDirection="Both"
+               Source="imgs/seven-earth-size-exoplanets-discovered-6423181526040576.2-hp2x.gif" />
+        <Image Name="img_Visor2"
+               Grid.Row="1" Grid.Column="2"
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               StretchDirection="Both"
+               Source="imgs/fwJJ-iZO.jpg" />
+    </Grid>
+</Window>
