@@ -1,0 +1,16 @@
+<Window x:Class="WrapPanel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WrapPanel" Height="350" Width="525">
+    <Grid>
+        <ScrollViewer>
+            <WrapPanel Width="264" >
+                <Image Height="100" Width="100" Margin="10" Source="fwJJ-iZO.jpg"/>
+                <Image Height="100" Width="100" Margin="10" Source="fwJJ-iZO.jpg"/>
+                <Image Height="100" Width="100" Margin="10" Source="fwJJ-iZO.jpg"/>
+                <Image Height="100" Width="100" Margin="10" Source="fwJJ-iZO.jpg"/>
+                <Image Height="100" Width="100" Margin="10" Source="fwJJ-iZO.jpg"/>
+            </WrapPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
