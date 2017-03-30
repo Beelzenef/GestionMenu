@@ -1,0 +1,16 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Class="TxtBScrollV.MainWindow"
+        Title="ScrollViewer con texto" Height="260" Width="493" ResizeMode="NoResize">
+    <Grid>
+        <ScrollViewer Name="scrV_Texto" HorizontalScrollBarVisibility="Auto" Margin="0,0,97,0">
+            <TextBox Name="txtB_LoreIpsum" TextWrapping="Wrap" Width="360">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut luctus risus a sem lobortis elementum. Integer quam lacus, volutpat eget risus rutrum, pulvinar volutpat enim. Donec consectetur auctor magna. Cras venenatis, lacus sit amet sodales volutpat, tellus elit finibus mi, eu ultrices metus lectus in tellus. Cras id porttitor quam, vel lobortis enim. Quisque venenatis in sem at laoreet. Donec vulputate tincidunt orci at tristique. Fusce vel est elit.
+                Sed eget diam quis neque egestas porta. Aliquam sed mattis turpis, ac ultrices ligula. Nulla congue lectus lacus, in pretium magna viverra et. Quisque mattis a elit ac luctus. Nullam fermentum nibh at ultricies faucibus. Etiam pharetra dolor magna, sed dapibus dui laoreet quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam sodales nec odio posuere consectetur. Aenean at commodo orci. Proin vehicula fermentum nulla, et tempus neque consectetur in. Sed feugiat, sapien ut rutrum fermentum, arcu leo tincidunt elit, eget sollicitudin nisl metus at nunc. Integer lacinia maximus urna in bibendum. Duis non enim ac arcu iaculis rhoncus nec in lectus. Maecenas ultrices accumsan leo, quis faucibus leo. Vestibulum sollicitudin purus quis elementum porta.
+                Donec luctus metus eget enim rhoncus dapibus. Nam ac ultrices quam. Suspendisse tempor turpis aliquet nulla molestie vestibulum. Suspendisse sit amet sollicitudin dui, vel porttitor eros. Nam non iaculis odio. Vivamus eu turpis lacinia, interdum massa vitae, viverra risus. Nulla in elementum nunc. Curabitur ullamcorper iaculis felis, vitae dignissim sapien rhoncus eget. Vestibulum euismod ante vel erat mollis, id tincidunt mi semper. Proin et augue eget nunc feugiat porta. Nunc ullamcorper lobortis est, id dapibus nisi commodo nec. Ut maximus turpis a felis feugiat, in maximus dui ornare. Aenean a purus diam.
+            </TextBox>
+        </ScrollViewer>
+        <Button x:Name="btn_MostrarDatos" Content="Datos" HorizontalAlignment="Left" Margin="402,46,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="btn_MostrarDatos_Click"/>
+    </Grid>
+</Window>
+

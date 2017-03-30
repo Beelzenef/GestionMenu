@@ -1,0 +1,10 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Class="CambioOpacidad.MainWindow"
+        Title="CambioOpacidad" Height="264.474" Width="315.158">
+    <Grid>
+        <Button x:Name="btn_Oculto" Content="Estoy oculto" HorizontalAlignment="Left" Margin="123,96,0,0" VerticalAlignment="Top" Width="75"/>
+        <Rectangle Name="recOcultando" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="170" Stroke="Black" VerticalAlignment="Top" Width="287" Margin="10,10,0,0"/>
+        <Slider x:Name="sld_CambiarOpacidad" HorizontalAlignment="Left" Margin="6,202,0,0" VerticalAlignment="Top" Width="291" Maximum="100" Value="50" Minimum="1" ValueChanged="sld_CambiarOpacidad_ValueChanged"/>
+    </Grid>
+</Window>

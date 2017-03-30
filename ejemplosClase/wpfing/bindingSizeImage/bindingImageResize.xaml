@@ -1,0 +1,12 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Class="BindingResizeImg.MainWindow"
+        Title="EjBinding" Height="264.474" Width="264.158" ResizeMode="NoResize">
+    <Grid Margin="0,0,2,0">
+        <Image x:Name="img_Prueba" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Source="imgs/fwJJ-iZO.jpg" Stretch="Fill"
+               Height="{Binding Value, ElementName=sld_AjusteSize}"
+               Width="{Binding Value, ElementName=sld_AjusteSize}"/>
+        <Slider x:Name="sld_AjusteSize" HorizontalAlignment="Left" Margin="10,199,0,0" VerticalAlignment="Top" Height="25" Width="221" Value="70" LargeChange="0" Maximum="190" Minimum="30"/>
+
+    </Grid>
+</Window>

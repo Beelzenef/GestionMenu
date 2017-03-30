@@ -1,0 +1,10 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Class="ControlandoGrid.MainWindow"
+        Title="GridEnEjecucion" Height="350" Width="525">
+    <Grid>
+        <Grid x:Name="gridPrueba" Margin="10,10,10,42"/>
+        <Button x:Name="btn_ModGrid" Content="Añadir botones" HorizontalAlignment="Left" Margin="70,278,0,0" VerticalAlignment="Top" Width="89" Height="27" Click="btn_ModGrid_Click"/>
+        <Button x:Name="btn_Vaciar" Content="Vaciar grid" HorizontalAlignment="Left" Margin="186,278,0,0" VerticalAlignment="Top" Width="120" Height="27" Click="btn_Vaciar_Click"/>
+    </Grid>
+</Window>
