@@ -1,0 +1,8 @@
+﻿<Window x:Class="AppW_LoginUsuario.VentanaSaludo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="VentanaSaludo" Height="300" Width="300">
+    <Grid>
+        <Label Content="¡Bienvenidx!" Margin="90" FontSize="20" HorizontalAlignment="Center" Height="40"  Width="120"/>
+    </Grid>
+</Window>

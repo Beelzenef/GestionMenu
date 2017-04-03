@@ -1,0 +1,21 @@
+﻿<Window x:Class="AppW_RTB.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="RTB" Height="350" Width="525" ResizeMode="NoResize">
+    <Grid>
+        <RichTextBox x:Name="rtb_Textito" HorizontalAlignment="Left" Height="300" Margin="10" VerticalAlignment="Top">
+            <FlowDocument>
+                <Paragraph FontSize="20">
+                   Texto en tamaño 20
+                </Paragraph>
+                <Paragraph FontStyle="Italic" FontSize="30">
+                    Texto en cursiva, tamaño 30
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="Texto de inicio, tal vez..."/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+    </Grid>
+</Window>
