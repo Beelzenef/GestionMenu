@@ -1,0 +1,21 @@
+﻿<Window x:Class="AppW_Selectores.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Jornadas ZonaZero" Height="350" Width="525" ResizeMode="NoResize">
+    <StackPanel>
+        <TextBlock Name="txtB_Titulo" Text="Titulo de partida" Margin="5" FontSize="20"/>
+        <TextBox Margin="5" FontSize="20"/>
+        <TextBlock Name="txtBl_NJugadores" Text="Numero de jugadores" Margin="5" FontSize="20"/>
+        <ListBox Name="lsB_NJugadores" FontSize="20" SelectionChanged="ListBox_SelectionChanged">
+            <TextBlock>2</TextBlock>
+            <TextBlock>3</TextBlock>
+            <TextBlock>4</TextBlock>
+        </ListBox>
+        <TextBlock Name="txtBl_Juegos" Text="¿Qué juego vas a narrar?" Margin="5" FontSize="20"/>
+        <ComboBox Name="comboB_Juegos" Margin="5" FontSize="20" SelectionChanged="comboB_Juegos_SelectionChanged">
+            <TextBlock>Vampiro: La mascarada</TextBlock>
+            <TextBlock>Anima: Beyond Fantasy</TextBlock>
+            <TextBlock Foreground="Blue">Talessya</TextBlock>
+        </ComboBox>
+    </StackPanel>
+</Window>
