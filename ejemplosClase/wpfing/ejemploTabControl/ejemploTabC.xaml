@@ -1,0 +1,30 @@
+﻿<Window x:Class="Tabs.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ejemplo de TabControl" Height="350" Width="525" ResizeMode="NoResize">
+    <StackPanel>
+        <TabControl Name="tbC_Imagenes" FontSize="15" Margin="10" Height="250">
+            <TabItem Name="tbI_Item1" Header="Tab1">
+                <Grid>
+                    <Image Name="rTnKBroAc_jpg" Source="rTnKBroAc.jpg" Stretch="Uniform"/>
+                </Grid>
+            </TabItem>
+            <TabItem Name="tbI_Item2" Header="Tab2">
+                <Grid>
+                    <Image Source="seven-earth-size-exoplanets-discovered-6423181526040576.2-hp2x.gif" Stretch="Uniform"/>
+                </Grid>
+            </TabItem>
+            <TabItem Name="tbI_Item3" Header="Tab3">
+                <Grid>
+                    <Image Source="rTnKBroAc.jpg" Stretch="Uniform"/>
+                </Grid>
+            </TabItem>
+            <TabItem Name="tbI_Item4" Header="Tab4">
+                <Grid>
+                    <Image Source="seven-earth-size-exoplanets-discovered-6423181526040576.2-hp2x.gif" Stretch="Uniform"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button Name="btn_Avanzar" Content="Avanzar" Margin="190, 5" FontSize="20" Click="btn_Avanzar_Click"/>
+    </StackPanel>
+</Window>
