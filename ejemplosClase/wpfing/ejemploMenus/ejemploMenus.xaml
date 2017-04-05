@@ -1,0 +1,35 @@
+﻿<Window x:Class="Menus.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Menús y menús contextuales" Height="350" Width="525" ResizeMode="NoResize">
+    <Window.ContextMenu>
+        <ContextMenu>
+            <MenuItem Header="Accion 1"/>
+            <MenuItem Header="Accion 2"/>
+            <MenuItem Header="Accion 3"/>
+        </ContextMenu>
+    </Window.ContextMenu>
+    <Grid>
+        <Menu Height="35" VerticalAlignment="Top" FontSize="20">
+            <MenuItem Header="Archivo">
+                <MenuItem Header="_Abrir"/>
+                <MenuItem Header="_Guardar como..."/>
+                <Separator/>
+                <MenuItem Header="_Cerrar programa"/>
+            </MenuItem>
+            <MenuItem Header="_Editar">
+                <MenuItem Header="Editar es de _pringados"/>
+            </MenuItem>
+        </Menu>
+
+        <Button Content="Boton con menú contextual" Margin="140, 140" >
+            <Button.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Accion 11"/>
+                    <MenuItem Header="Accion 12"/>
+                    <MenuItem Header="Accion 13"/>
+                </ContextMenu>
+            </Button.ContextMenu>
+        </Button>
+    </Grid>
+</Window>
