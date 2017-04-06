@@ -24,5 +24,12 @@ namespace Menus
         {
             InitializeComponent();
         }
+
+        private void mnI_Rolero_Click(object sender, RoutedEventArgs e)
+        {
+            string texto = "¿Es usted rolero? " + mnI_Rolero.IsChecked.ToString();
+
+            MessageBox.Show(texto);
+        }
     }
 }
