@@ -1,0 +1,20 @@
+﻿<Window x:Class="ejemploExpander.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TextBlock + Expander" Height="203.947" Width="525" ResizeMode="NoResize">
+    <DockPanel>
+        <Expander Header="Tu opinion:" FontSize="20" Margin="10" Background="#FF789CEA" Width="255">
+            <StackPanel>
+                <RadioButton Content="Nah" FontSize="15"/>
+                <RadioButton Content="Meh" FontSize="15"/>
+                <RadioButton Content="Mola" FontSize="15"/>
+                <RadioButton Content="TAKE MY MONEY" FontSize="15"/>
+            </StackPanel>
+        </Expander>
+        <TextBlock TextAlignment="Center" Padding="30" Height="150">
+            <Run Text="hey there!" Foreground="Blue" FontFamily="Comic Sans" FontSize="20" FontStyle="Italic"/>
+            <LineBreak/><LineBreak/><LineBreak/>
+             <Run Text="hello world!" Foreground="Purple" FontFamily="Source Sans Pro Black" FontSize="35" TextDecorations="Underline"/>
+        </TextBlock>
+    </DockPanel>
+</Window>
