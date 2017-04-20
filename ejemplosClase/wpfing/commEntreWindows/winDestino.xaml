@@ -1,0 +1,10 @@
+﻿<Window x:Class="commCurrent.winDestino"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="winDestino" Height="300" Width="300">
+    <StackPanel>
+        <TextBox Name="txtB_ContenedorDestino" Text="Esperando texto..."/>
+        <Button Name="btn_MostrarTexto" Content="Ver cambios" Margin="50, 10" Click="btn_MostrarTexto_Click"/>
+        <Button Name="btn_Salida" Content="Cerrar app" Margin="50, 10" Click="btn_Salida_Click"/>
+    </StackPanel>
+</Window>

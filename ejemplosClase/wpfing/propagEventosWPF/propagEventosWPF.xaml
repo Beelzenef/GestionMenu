@@ -1,0 +1,13 @@
+﻿<Window x:Class="ejemploEventos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Coords de mouse" Height="350" Width="525" ResizeMode="NoResize" MouseMove="Window_MouseMove">
+    <StackPanel>
+        <TextBlock Name="tBl_Coordenadas" Text="Textito" Foreground="Red" FontWeight="Bold"
+                   FontSize="16" Margin="10" HorizontalAlignment="Right"/>
+        <StackPanel HorizontalAlignment="Left" Margin="10" Height="200" Width="400">
+            <TextBlock Name="tBl_titleImagen" Text="La Tierra observando a Marte"/>
+            <Image Name="img_Earth" Source="seven-earth-size-exoplanets-discovered-6423181526040576.2-hp2x.gif" MouseMove="img_Earth_MouseMove" />
+        </StackPanel>
+    </StackPanel>
+</Window>

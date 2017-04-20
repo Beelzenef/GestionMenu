@@ -1,0 +1,16 @@
+﻿<Window x:Class="assingComandos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Editor de texto" Height="359.211" Width="525" ResizeMode="NoResize">
+    <StackPanel FocusManager.IsFocusScope="True">
+        <Label Content="lets write!" Margin="4"/>
+        <TextBox Name="txtB_EditorTexto" Margin="5" Height="100" FontSize="15"/>
+        <Label Content="all night!" Margin="4"/>
+        <TextBox Name="txtB_OtroEditor" Margin="5" Height="100" FontSize="15"/>
+        <StackPanel FocusManager.IsFocusScope="True" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Name="btn_Copiar" Content="Copiar" Command="Copy" Margin="5" FontSize="15"/>
+            <Button Name="btn_Pegar" Content="Pegar" Command="Paste" Margin="5" FontSize="15"/>
+            <Button Name="btn_Cortar" Content="Cortar" Command="Cut" Margin="5" FontSize="15"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

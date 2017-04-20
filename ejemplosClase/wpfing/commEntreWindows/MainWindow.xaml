@@ -1,0 +1,9 @@
+﻿<Window x:Class="commCurrent.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Principal" Height="350" Width="525" ResizeMode="NoResize">
+    <StackPanel>
+        <TextBox Name="txtB_Origen" Text="Un saludito desde esta galaxia"/>
+        <Button Name="btn_Comunicacion" Content="Comunicar" Margin="180, 20" Click="btn_Comunicacion_Click"/>
+    </StackPanel>
+</Window>
