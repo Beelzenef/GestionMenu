@@ -1,0 +1,14 @@
+﻿<Window x:Class="CerrandoWin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Comando - Cerrar ventana" Height="160.526" Width="525" ResizeMode="NoResize">
+    <Window.CommandBindings>
+        <CommandBinding Command="Close" CanExecute="CommandBinding_CanExecute"
+                                        Executed="CommandBinding_Executed"/>
+    </Window.CommandBindings>
+    <StackPanel>
+        <CheckBox Name="chkB_puedeCerrar" Content="¿Puede cerrar la ventana?" Margin="160, 30"/>
+        <Button Name="btn_Cerrar" Content="Cerrar ventana" Margin="180, 10"
+                Command="Close"/>
+    </StackPanel>
+</Window>
