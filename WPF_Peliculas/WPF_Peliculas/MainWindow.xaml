@@ -1,0 +1,47 @@
+﻿<Window x:Class="WPF_Peliculas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Peliculitas" Height="350" Width="525" ResizeMode="NoResize"
+        xmlns:pelis="clr-namespace:WPF_Peliculas"
+        xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <Window.Resources>
+        <pelis:Pelicula x:Key="unaPelicula"
+                        Titulo="Arrival" Genero="CienciaFiccion" GanadorOscar="{x:Null}" Calificacion="5.0">
+            <pelis:Pelicula.ElDirector>
+                <pelis:Director Nombre="EGB" Nacionalidad="ES"/>
+            </pelis:Pelicula.ElDirector>
+            <pelis:Pelicula.ListaActores>
+                <system:String>WAT</system:String>
+                <system:String>MEH</system:String>
+            </pelis:Pelicula.ListaActores>
+        </pelis:Pelicula>
+    </Window.Resources>
+    <StackPanel>
+
+        <!-- Valores a escribir -->
+        <GroupBox Header="Titulo">
+            <TextBox Text="{Binding Titulo, Source={StaticResource unaPelicula}}"/>
+        </GroupBox>
+        <GroupBox Header="Genero">
+            <TextBox Text="{Binding Genero, Source={StaticResource unaPelicula}}"/>
+        </GroupBox>
+        <GroupBox Header="¿Ganador"/>
+        <TextBox Text="{Binding GanadorOscar, Source={StaticResource unaPelicula}}"/>
+        <GroupBox Header="Calificacion de la crítica:">
+            <TextBox Text="{Binding Calificacion, Source={StaticResource unaPelicula}}"/>
+        </GroupBox>
+
+        <!-- Valores fijos que van a ser modificados -->
+        <Label Name="lbl_Titulo" Content="{Binding Titulo, Source={StaticResource unaPelicula}}"/>
+        <Label Name="lbl_Genero" Content="{Binding Genero, Source={StaticResource unaPelicula}}"/>
+        <Label Name="lbl_Oscar" Content="{Binding GanadorOscar, Source={StaticResource unaPelicula}}"/>
+        <Label Name="lbl_Calificacion" Content="{Binding Calificacion, Source={StaticResource unaPelicula}}"/>
+        <Label Name="lbl_Director" Content="{Binding ElDirector.Nombre, Source={StaticResource unaPelicula}}"/>
+        <Label Name="lbl_Actor1" Content="{Binding ListaActores[0], Source={StaticResource unaPelicula}}"/>
+        <!-- Cambiando los valores -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Name="btn_AumentarCalificacion" Content="Aumentar calificacion" Click="btn_AumentarCalificacion_Click"/>
+            <Button Name="btn_CambiarTitulo" Content="Cambiar titulo" Click="btn_CambiarTitulo_Click" />
+        </StackPanel>
+    </StackPanel>
+</Window>
