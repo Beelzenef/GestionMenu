@@ -8,19 +8,19 @@
         <modelo:Director x:Key="unDirector" Nombre="Ridley Scott" Nacionalidad="USA">
             <modelo:Director.Filmes>
                 <!-- Lista de peliculas -->
-                <modelo:Pelicula Titulo="Alien" Genero="CienciaFiccion" Calificacion="5" GanadorOscar="True">
+                <modelo:Pelicula Titulo="Alien" Genero="CienciaFiccion" Calificacion="2" GanadorOscar="True">
                     <modelo:Pelicula.ListaActores>
                         <system:String>Actor 1</system:String>
                         <system:String>Actriz 2</system:String>
                     </modelo:Pelicula.ListaActores>
                 </modelo:Pelicula>
-                <modelo:Pelicula Titulo="American Gangster" Genero="Mafia" Calificacion="5" GanadorOscar="True">
+                <modelo:Pelicula Titulo="American Gangster" Genero="Mafia" Calificacion="3" GanadorOscar="True">
                     <modelo:Pelicula.ListaActores>
                         <system:String>Actor 1</system:String>
                         <system:String>Actriz 2</system:String>
                     </modelo:Pelicula.ListaActores>
                 </modelo:Pelicula>
-                <modelo:Pelicula Titulo="Prometheus" Genero="CienciaFiccion" Calificacion="5" GanadorOscar="True">
+                <modelo:Pelicula Titulo="Prometheus" Genero="CienciaFiccion" Calificacion="3" GanadorOscar="True">
                     <modelo:Pelicula.ListaActores>
                         <system:String>Actor 1</system:String>
                         <system:String>Actriz 2</system:String>
@@ -34,6 +34,7 @@
                 </modelo:Pelicula>
             </modelo:Director.Filmes>
         </modelo:Director>
+        <modelo:ConversorCalificacion x:Key="convertirCalificacion"/>
     </Window.Resources>
     <StackPanel DataContext="{StaticResource unDirector}">
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
@@ -49,7 +50,7 @@
                         <TextBlock Text="{Binding Genero}"/>
                     </GroupBox>
                     <GroupBox Header="Calificacion">
-                        <TextBlock Text="{Binding Calificacion}"/>
+                        <TextBlock Text="{Binding Calificacion, Converter={StaticResource convertirCalificacion}}"/>
                     </GroupBox>
                     <GroupBox Header="Lista de actores">
                         <ComboBox ItemsSource="{Binding ListaActores}"/>
