@@ -1,0 +1,61 @@
+﻿<Window x:Class="WPF_MaestroDetalles.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:modelo="clr-namespace:WPF_Peliculas"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        Title="Maestro Detalle" Height="260.526" Width="525" ResizeMode="NoResize">
+    <Window.Resources>
+        <modelo:Director x:Key="unDirector" Nombre="Ridley Scott" Nacionalidad="USA">
+            <modelo:Director.Filmes>
+                <!-- Lista de peliculas -->
+                <modelo:Pelicula Titulo="Alien" Genero="CienciaFiccion" Calificacion="5" GanadorOscar="True">
+                    <modelo:Pelicula.ListaActores>
+                        <system:String>Actor 1</system:String>
+                        <system:String>Actriz 2</system:String>
+                    </modelo:Pelicula.ListaActores>
+                </modelo:Pelicula>
+                <modelo:Pelicula Titulo="American Gangster" Genero="Mafia" Calificacion="5" GanadorOscar="True">
+                    <modelo:Pelicula.ListaActores>
+                        <system:String>Actor 1</system:String>
+                        <system:String>Actriz 2</system:String>
+                    </modelo:Pelicula.ListaActores>
+                </modelo:Pelicula>
+                <modelo:Pelicula Titulo="Prometheus" Genero="CienciaFiccion" Calificacion="5" GanadorOscar="True">
+                    <modelo:Pelicula.ListaActores>
+                        <system:String>Actor 1</system:String>
+                        <system:String>Actriz 2</system:String>
+                    </modelo:Pelicula.ListaActores>
+                </modelo:Pelicula>
+                <modelo:Pelicula Titulo="Blade Runner" Genero="CienciaFiccion" Calificacion="5" GanadorOscar="True">
+                    <modelo:Pelicula.ListaActores>
+                        <system:String>Actor 1</system:String>
+                        <system:String>Actriz 2</system:String>
+                    </modelo:Pelicula.ListaActores>
+                </modelo:Pelicula>
+            </modelo:Director.Filmes>
+        </modelo:Director>
+    </Window.Resources>
+    <StackPanel DataContext="{StaticResource unDirector}">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
+            <GroupBox Header="Lista de peliculas">
+                <ListBox Name="lsB_Peliculas" ItemsSource="{Binding Filmes}"/>
+            </GroupBox>
+            <GroupBox Header="Actores por pelicula">
+                <StackPanel DataContext="{Binding SelectedItem, ElementName=lsB_Peliculas}" Width="314">
+                    <GroupBox Header="Titulo">
+                        <TextBlock Text="{Binding Titulo}"/>
+                    </GroupBox>
+                    <GroupBox Header="Genero">
+                        <TextBlock Text="{Binding Genero}"/>
+                    </GroupBox>
+                    <GroupBox Header="Calificacion">
+                        <TextBlock Text="{Binding Calificacion}"/>
+                    </GroupBox>
+                    <GroupBox Header="Lista de actores">
+                        <ComboBox ItemsSource="{Binding ListaActores}"/>
+                    </GroupBox>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </StackPanel>
+</Window>
