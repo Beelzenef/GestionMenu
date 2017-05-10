@@ -1,0 +1,35 @@
+﻿<Window x:Class="AppWPF_ListView.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ListView de Personas" Height="300" Width="500" ResizeMode="NoResize">
+    <StackPanel Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Center" Width="250">
+            <GroupBox Header="Nombre" Margin="20, 5">
+                <TextBox Name="txtB_Nombre"></TextBox>
+            </GroupBox>
+            <GroupBox Header="Personaje" Margin="20, 5">
+                <TextBox Name="txtB_NombrePJ"></TextBox>
+            </GroupBox>
+            <GroupBox Header="Nivel de personaje:" Margin="20, 5">
+                <TextBox Name="txtB_NivelPJ"></TextBox>
+            </GroupBox>
+            <Button Name="btn_AnadirDatos" Content="Añadir datos"  Margin="60, 5" Click="btn_AnadirDatos_Click"/>
+            <Button Name="btn_CambiarDatos" Content="Editar datos" Margin="60, 5" Click="btn_CambiarDatos_Click"/>
+            <Button Name="btn_EliminarDatos" Content="Eliminar datos" Margin="60, 5" Click="btn_EliminarDatos_Click"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" Width="235">
+            <ListView Name="lsV_Jugadores" Margin="5">
+                <ListView.View>
+                    <GridView x:Name="grd_NombresJugadores">
+                        <GridViewColumn Header="Jugador"
+                                        DisplayMemberBinding="{Binding Nombre}"/>
+                        <GridViewColumn Header="Personaje"
+                                        DisplayMemberBinding="{Binding Personaje}"/>
+                        <GridViewColumn Header="Nivel"
+                                        DisplayMemberBinding="{Binding Nivel}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+    </StackPanel>
+</Window>
