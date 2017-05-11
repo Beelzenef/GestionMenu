@@ -1,0 +1,37 @@
+<Window x:Class="WPF_Recursos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Reestablecer contraseña" Height="310" Width="525" ResizeMode="NoResize">
+    <Window.Resources>
+        
+        <!-- Estilos -->
+        <Style TargetType="{x:Type GroupBox}">
+            <Setter Property="FontFamily" Value="Cambria"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+
+        <Style TargetType="{x:Type PasswordBox}">
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="6"/>
+        </Style>
+        
+    </Window.Resources>
+    <StackPanel>
+        <TextBlock Text="Cambio de contraseña" FontSize="30"
+                   Margin="10"/>
+        <GroupBox Header="Contraseña anterior">
+            <PasswordBox/>
+        </GroupBox>
+        <GroupBox Header="Nueva contraseña">
+            <PasswordBox/>
+        </GroupBox>
+        <GroupBox Header="Repite la nueva contraseña">
+            <PasswordBox/>
+        </GroupBox>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Cambiar" Margin="5" Width="100"/>
+            <Button Content="Aceptar" Margin="5" Width="100"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
