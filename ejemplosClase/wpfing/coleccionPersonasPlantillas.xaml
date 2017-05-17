@@ -1,0 +1,34 @@
+<Window x:Class="EnlaceAListaPersonas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525" ResizeMode="NoResize">
+    <Window.Resources>
+        
+        <DataTemplate x:Key="datosPersonas">
+            <StackPanel>
+                <GroupBox Header="Nombre">
+                    <TextBlock Text="{Binding Nombre}"/>
+                </GroupBox>
+                <GroupBox Header="Apellidos">
+                    <TextBlock Text="{Binding Apellidos}"/>
+                </GroupBox>
+                <GroupBox Header="Estatura">
+                    <TextBlock Text="{Binding Estatura}"/>
+                </GroupBox>
+                <GroupBox Header="Fecha de nacimiento">
+                    <TextBlock Text="{Binding FechaNacimiento}"/>
+                </GroupBox>
+            </StackPanel>
+        </DataTemplate>
+        
+    </Window.Resources>
+    
+    <StackPanel Orientation="Horizontal">
+        <ContentControl Width="275">
+            <ListBox Name="lsb_ListaPersonas" ItemsSource="{Binding}" ItemTemplate="{StaticResource datosPersonas}" Height="260"/>
+        </ContentControl>
+        <StackPanel Width="230">
+            <Button Content="Mostrar lista de personas" Margin="40, 0"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
