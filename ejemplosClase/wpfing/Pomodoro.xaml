@@ -1,0 +1,14 @@
+﻿<Window x:Class="Pomodoro.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Pomodoro 🍅" Height="169.619" Width="227.571">
+    <StackPanel HorizontalAlignment="Center">
+        <Label Name="lbl_Momentum" Content="Sin iniciar" Margin="5" FontSize="15" HorizontalAlignment="Center"/>
+        <Label Name="lbl_ContadorTiempo" Content="00:00" Margin="5" FontSize="15" HorizontalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal">
+            <Button Name="btn_Iniciar"  Content="Iniciar" Margin="10, 5" FontSize="15" Click="btn_IniciarPausar_Click"/>
+            <Button Name="btn_Pausar"  Content="Pausar" Margin="10, 5" FontSize="15" Click="btn_Pausar_Click" IsEnabled="False"/>
+            <Button Name="btn_Detener" Content="Detener" Margin="10, 5" FontSize="15" Click="btn_Detener_Click" IsEnabled="False"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
